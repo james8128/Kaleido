@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #07080c;
+  --color-surface: #12151c;
+  --color-subtle: #1c212b;
+  --color-fg: #eef0f3;
+  --color-muted: #9aa0aa;
+  --color-faint: #6d7380;
+  --color-accent: #d5dbe6;
+  --color-accent-fg: #0b0d12;
+  --color-border: rgb(255 255 255 / 0.1);
+  --color-ring: #d5dbe6;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+}
+
+:root {
+  --shadow-border: 0 0 0 1px rgb(255 255 255 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(255 255 255 / 0.14);
+  --shadow-dock:
+    0 0 0 1px rgb(255 255 255 / 0.08), 0 16px 40px rgb(0 0 0 / 0.48);
+  --bg-rgb: 7 8 12;
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    min-height: 100dvh;
+    overflow: hidden;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    user-select: none;
+    overscroll-behavior: none;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+.mode-swatch-prism {
+  background: conic-gradient(
+    from 120deg,
+    #ff5a73,
+    #ffc857,
+    #5dffb1,
+    #57c5ff,
+    #c07cff,
+    #ff5a73
+  );
+}
+
+.mode-swatch-ember {
+  background: conic-gradient(from 120deg, #4a1408, #e05a2b, #ffb45a, #8a2208);
+}
+
+.mode-swatch-tide {
+  background: conic-gradient(from 120deg, #082830, #1bb8c7, #7ee0c8, #3d7cff);
+}
+
+.mode-swatch-noir {
+  background: conic-gradient(from 120deg, #141418, #d8d8dc, #6a6a72, #f4f4f6);
+}
+
+.mode-swatch-bloom {
+  background: conic-gradient(from 120deg, #3a1020, #f0759a, #ffc4d8, #e05570);
+}
+
+.mode-swatch-forest {
+  background: conic-gradient(from 120deg, #0e2214, #3dba6e, #d4e07a, #1a5c38);
+}
+
+.mode-swatch-selected {
+  box-shadow:
+    0 0 0 2px var(--color-bg),
+    0 0 0 4px var(--color-accent);
+}
+
+.kaleido-dock-wrap {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.kaleido-vignette {
+  background: radial-gradient(
+    circle at center,
+    transparent 38%,
+    rgb(var(--bg-rgb) / 0.28) 64%,
+    rgb(var(--bg-rgb) / 0.88) 100%
+  );
+}
+
+.kaleido-hint {
+  transition-property: opacity, transform, filter;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-smooth-out);
+}
+
+.kaleido-hint[data-hidden="true"] {
+  opacity: 0;
+  transform: translateY(-6px);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kaleido-hint {
+    transition: opacity var(--motion-quick) linear;
+  }
+
+  .kaleido-hint[data-hidden="true"] {
+    transform: none;
+    filter: none;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Kaleido",
+      "hasCanvas": true,
+      "bodyTextLen": 73,
+      "bodyTextHash": "4c46bdd88fdee049cf0f63ca2dcb1c00454f4e42a8777dba203e4224ae68b703",
+      "bodyTextPrefix": "Kaleido 萬花筒 畫面已凍結 移動指標或滑動手指 區段 8 棱鏡 燼火 潮汐 墨白 花開 林間 凍結 隨機 匯出 清除 棱",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Kaleido",
+      "hasCanvas": true,
+      "bodyTextLen": 62,
+      "bodyTextHash": "f935f4bb5cb2de8b9083e603ccdd48a8b7cbd0504e801fdda0b6ef4304d480f5",
+      "bodyTextPrefix": "Kaleido 萬花筒 畫面已凍結 移動指標或滑動手指 區段 8 棱鏡 燼火 潮汐 墨白 花開 林間 凍結 隨機 匯出 清除",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
